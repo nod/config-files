@@ -5,14 +5,13 @@ add_newline = true
 continuation_prompt = "[▸▹ ](dimmed white)"
 
 format = """($nix_shell$container$fill$git_metrics\n)$cmd_duration\
+$username\
 $hostname\
-$localip\
 $shlvl\
 $shell\
 $env_var\
 $jobs\
 $sudo\
-$username\
 $character"""
 
 right_format = """
@@ -57,12 +56,20 @@ style = "bold italic bright-purple"
 symbol = "⋈┈"
 disabled = false
 
+[hostname]
+format = "[$ssh_symbol$hostname]($style) "
+style = "bold bright-green"
+ssh_symbol = "@"
+detect_env_vars = ['!TMUX', 'SSH_CONNECTION']
+
+
 [username]
 style_user = "bright-yellow bold italic"
 style_root = "purple bold italic"
-format = "[⭘ $user]($style) "
+format = "[$user]($style)"
 disabled = false
 show_always = false
+detect_env_vars = ['!TMUX', 'SSH_CONNECTION']
 
 [directory]
 # home_symbol = "⌂"
@@ -84,7 +91,7 @@ format = "[◄ $duration ](italic white)"
 [jobs]
 format = "[$symbol$number]($style) "
 style = "white"
-symbol = "[▶](blue italic)"
+symbol = "[✧](light-yellow italic)"
 
 [localip]
 ssh_only = true
