@@ -25,9 +25,8 @@ $git_branch\
 $git_commit\
 $git_state\
 $git_status\
-$hg_branch\
-$pijul_channel\
 $docker_context\
+$python\
 $package\
 $custom\
 $status\
@@ -159,6 +158,12 @@ symbol = "▲ "
 [buf]
 symbol = "■ "
 format = " [buf](italic) [$symbol $version $buf_version]($style)"
+
+[python]
+format = "  [($virtualenv)]($style)"
+symbol = ""
+version_format = "${raw}"
+style = "bold bright-yellow"
 
 [memory_usage]
 symbol = "▪▫▪ "

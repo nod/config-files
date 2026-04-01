@@ -1,1 +1,31 @@
-[ -e /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+
+# # # # # #
+# detect our machine type
+# # # # # #
+
+unameish="$(uname -s)"
+machineType="NOTYET"
+case "${unameish}" in
+    Linux*)     machineType=Linux;;
+    Darwin*)    machineType=Mac;;
+    *)          machineType="UNKNOWN:${unameOut}"
+esac
+export machineType
+
+# # # # # #
+# now setup OS specific env vars
+# # # # # #
+
+if [[ "$machineType" == "Mac" ]]; then
+	_homebrew=/opt/homebrew/bin/brew
+fi
+
+if [[ "$machineType" == "Linux" ]]; then
+	_homebrew=/home/linuxbrew/.linuxbrew/bin/brew
+fi
+
+# # # # # #
+# now pull in homebrew
+# # # # # #
+
+[ -e $_homebrew ] && eval "$($_homebrew shellenv zsh)"

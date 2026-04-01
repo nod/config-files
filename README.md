@@ -12,12 +12,15 @@
 these are most likely useless to someone else.
 
 
-## prereqs
+## assumptions, no particular order
 
-on linux - install the build-essential package (or equiv per distro)
-on mac - install xcode command line tools
+On linux - install the `build-essential` package (or equiv per distro)
 
-then on both, install brew.sh
+On mac - install xcode command line tools
+
+Brew.sh is needed for the installs.
+
+Put `~/.secrets` in place if appropriate.
 
 ## using
 

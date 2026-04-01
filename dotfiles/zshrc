@@ -1,2 +1,28 @@
 eval "$(starship init zsh)"
 set -o vi
+
+alias ls="/bin/ls --color=auto -F"
+alias ll="/bin/ls --color=auto -lF"
+alias l="/bin/ls --color=auto -lrtF"
+alias pyv="_pyv"
+
+function mcd {
+  dest=$1
+  if [ -z $dest ]; then
+    newdt=`date "+%Y%M%d"`
+    dest="tmpd-${newdt}-${RANDOM}"
+  fi
+  mkdir -p $dest
+  cd $dest
+}
+
+function _pyv {
+  dest=$1
+  if [ -z $dest ]; then
+    dest="${HOME}/.pyvs/scratch"
+  fi
+  if [ ! -e $dest ]; then
+    python3 -mvenv $dest
+  fi
+  source $dest/bin/activate
+}
