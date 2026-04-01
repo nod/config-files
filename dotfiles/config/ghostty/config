@@ -1,0 +1,10 @@
+theme=Afterglow
+font-size=16
+font-family=Hack Nerd Font Mono
+quit-after-last-window-closed=true
+background-opacity=0.99
+clipboard-read=allow
+clipboard-write=allow
+keybind = shift+enter=text:\n
+window-width=100
+window-height=30
