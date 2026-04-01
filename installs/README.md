@@ -7,4 +7,4 @@ These are broken out into 2 categories, `sh` and `ux`.
 
 ## installing everything
 
-`./all.sh`
+`./all-brews.sh`
