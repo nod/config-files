@@ -4,7 +4,7 @@
 add_newline = false
 continuation_prompt = "[▸▹ ](dimmed white)"
 
-format = """($nix_shell$container$fill\n)$cmd_duration\
+format = """($nix_shell$container$fill$cmd_duration\n)\
 $username\
 $hostname\
 $shlvl\
@@ -86,7 +86,7 @@ repo_root_style = 'bold blue'
 repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [჻](bold bright-blue)'
 
 [cmd_duration]
-format = "[◄ $duration ](italic white)"
+format = "[⏲ $duration ](italic white)"
 
 [jobs]
 format = "[$symbol$number]($style) "
