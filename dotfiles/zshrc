@@ -1,16 +1,24 @@
 eval "$(starship init zsh)"
 
+# # # # # # # # # # # # # #
 # setup vi mode
-# bindkey -v
+# # # # # # # # # # # # # #
+# zsh vi-mode is horrible.  use the excellent zsh-vi-mode instead of the builtin.
 export KEYTIMEOUT=1 # there's a delay for entering vim mode in zsh
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 
+# # # # # # # # # # # # # #
+# generic aliases
+# # # # # # # # # # # # # #
 alias ls="/bin/ls --color=auto -F"
 alias ll="/bin/ls --color=auto -lF"
 alias l="/bin/ls --color=auto -lrtF"
 alias pyv="_pyv"
 
+# # # # # # # # # # # # # #
+# helper functions
+# # # # # # # # # # # # # #
 function mcd {
   dest=$1
   if [ -z $dest ]; then
@@ -32,10 +40,26 @@ function _pyv {
   source $dest/bin/activate
 }
 
+
+# # # # # # # # # # # # # #
+# term settings
+# # # # # # # # # # # # # #
+# our term can get janky depending on whether we're local on mac or ssh'd to linux
+# some linux variants don't handle xterm-ghostty so just default to a standard
+# one when ssh'd
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   TERM=xterm-256color
 else
   TERM=xterm-ghostty
 fi
 export TERM
+
+# # # # # # # # # # # # # #
+# claude profiles for work and home
+# # # # # # # # # # # # # #
+claude_bin=`which claude`
+alias claude-work='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-work" $claude_bin "/sandbox"'
+alias claude-home='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-home" $claude_bin "/sandbox"'
+alias claude="echo bzzt.  use claude-work or claude-home"
+
 

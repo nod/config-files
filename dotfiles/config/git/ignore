@@ -1,3 +1,5 @@
 **/.claude/settings.local.json
 **/*.swp
 .DS_Store
+**/claude-work/*
+**/claude-home/*
