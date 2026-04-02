@@ -147,7 +147,7 @@ stashed = "[◃◈](italic white)"
 modified = "[●◦](italic yellow)"
 staged = "[▪┤[$count](bold white)│](italic bright-cyan)"
 renamed = "[◎◦](italic bright-blue)"
-deleted = "[✕](italic red)"
+deleted = "[✘](italic red)"
 
 [aws]
 disabled = true
