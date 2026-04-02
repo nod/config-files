@@ -1,3 +1,4 @@
+brew "marp-cli"
 brew "ffmpeg"
 brew "yt-dlp"
 cask "ankerwork"
