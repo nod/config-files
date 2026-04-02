@@ -55,6 +55,12 @@ fi
 export TERM
 
 # # # # # # # # # # # # # #
+# maybe local setup?
+# # # # # # # # # # # # # #
+[ -e ~/.secrets/env ] && source ~/.secrets/env
+
+
+# # # # # # # # # # # # # #
 # claude profiles for work and home
 # # # # # # # # # # # # # #
 claude_bin=`which claude`
