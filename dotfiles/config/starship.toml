@@ -52,14 +52,14 @@ disabled = false
 
 [hostname]
 format = "[$ssh_symbol$hostname]($style) "
-style = "bold green"
+style = "green"
 ssh_symbol = "@"
 detect_env_vars = ['!TMUX', 'SSH_CONNECTION']
 
 
 [username]
-style_user = "bright-yellow bold"
-style_root = "purple bold"
+style_user = "yellow"
+style_root = "purple"
 format = "[$user]($style)"
 disabled = false
 show_always = false
