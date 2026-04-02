@@ -1,5 +1,10 @@
 eval "$(starship init zsh)"
-set -o vi
+
+# setup vi mode
+# bindkey -v
+export KEYTIMEOUT=1 # there's a delay for entering vim mode in zsh
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 
 alias ls="/bin/ls --color=auto -F"
 alias ll="/bin/ls --color=auto -lF"

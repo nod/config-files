@@ -1,10 +1,18 @@
-theme=Afterglow
-font-size=16
-font-family=Hack Nerd Font Mono
-quit-after-last-window-closed=true
-background-opacity=0.99
-clipboard-read=allow
-clipboard-write=allow
+# set up the pretty
+theme = Afterglow
+font-size = 16
+font-family = Hack Nerd Font Mono
+background-opacity = 0.99
+
+# behaviors
+quit-after-last-window-closed = true
+clipboard-read = allow
+clipboard-write = allow
 keybind = shift+enter=text:\n
-window-width=100
-window-height=30
+
+# size my windows
+window-width = 100
+window-height = 30
+
+# start in home dir with new windows
+window-inherit-working-directory = false 
