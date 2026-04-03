@@ -64,8 +64,8 @@ export TERM
 # claude profiles for work and home
 # # # # # # # # # # # # # #
 claude_bin=`which claude`
-alias claude-work='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-work" $claude_bin "/sandbox"'
-alias claude-home='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-home" $claude_bin "/sandbox"'
+alias claude-work='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-work" $claude_bin '
+alias claude-home='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-home" $claude_bin '
 alias claude="echo bzzt.  use claude-work or claude-home"
 
 
