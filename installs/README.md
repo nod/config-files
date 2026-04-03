@@ -15,7 +15,7 @@ certain configs added to the shell script for that context that brew alone
 wouldn't handle.
 
 ```
-cd sh
+cd ux
 ./go.sh
 ```
 
