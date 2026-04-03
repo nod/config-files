@@ -3,6 +3,7 @@ theme = Nord Wave
 font-size = 16
 font-family = Hack Nerd Font Mono
 background-opacity = 0.99
+macos-icon = glass 
 
 # behaviors
 quit-after-last-window-closed = true
