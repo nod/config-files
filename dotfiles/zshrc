@@ -3,14 +3,16 @@ eval "$(starship init zsh)"
 # # # # # # # # # # # # # #
 # setup vi mode
 # # # # # # # # # # # # # #
-# zsh vi-mode is horrible.  use the excellent zsh-vi-mode instead of the builtin.
+
 export KEYTIMEOUT=1 # there's a delay for entering vim mode in zsh
+# zsh vi-mode is horrible.  use the excellent zsh-vi-mode instead of the builtin.
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 
 # # # # # # # # # # # # # #
 # generic aliases
 # # # # # # # # # # # # # #
+
 alias ls="/bin/ls --color=auto -F"
 alias ll="/bin/ls --color=auto -lF"
 alias l="/bin/ls --color=auto -lrtF"
@@ -19,6 +21,12 @@ alias pyv="_pyv"
 # # # # # # # # # # # # # #
 # helper functions
 # # # # # # # # # # # # # #
+
+function sourceif {
+  srcfile=$1
+  [ -e "$srcfile" ] && source "$srcfile"
+}
+
 function mcd {
   dest=$1
   if [ -z $dest ]; then
@@ -44,9 +52,11 @@ function _pyv {
 # # # # # # # # # # # # # #
 # term settings
 # # # # # # # # # # # # # #
-# our term can get janky depending on whether we're local on mac or ssh'd to linux
-# some linux variants don't handle xterm-ghostty so just default to a standard
-# one when ssh'd
+# our term can get janky depending on whether we're local on mac or ssh'd to
+# linux some linux variants don't handle xterm-ghostty so just default to
+# xterm-256color when ssh'd
+# # # # # # # # # # # # # #
+
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   TERM=xterm-256color
 else
@@ -54,18 +64,29 @@ else
 fi
 export TERM
 
+
 # # # # # # # # # # # # # #
-# maybe local setup?
+# maybe private stuff?
 # # # # # # # # # # # # # #
-[ -e ~/.secrets/env ] && source ~/.secrets/env
+
+sourceif ~/.secrets/env
 
 
 # # # # # # # # # # # # # #
 # claude profiles for work and home
 # # # # # # # # # # # # # #
+
 claude_bin=`which claude`
 alias claude-work='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-work" $claude_bin '
 alias claude-home='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-home" $claude_bin '
 alias claude="echo bzzt.  use claude-work or claude-home"
+
+
+# # # # # # # # # # # # # #
+# finally, see if there's a ~/.zlocal and pull that in for per workstation
+# specific helpers
+# # # # # # # # # # # # # #
+
+sourceif ~/.zlocal
 
 
