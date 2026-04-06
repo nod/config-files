@@ -52,10 +52,10 @@ function _pyv {
 # # # # # # # # # # # # # #
 # term settings
 # # # # # # # # # # # # # #
+
 # our term can get janky depending on whether we're local on mac or ssh'd to
 # linux some linux variants don't handle xterm-ghostty so just default to
 # xterm-256color when ssh'd
-# # # # # # # # # # # # # #
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   TERM=xterm-256color
@@ -63,6 +63,9 @@ else
   TERM=xterm-ghostty
 fi
 export TERM
+
+# pasting into the terminal upper cases last char, this fixes that
+unset zle_bracketed_paste
 
 
 # # # # # # # # # # # # # #
