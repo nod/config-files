@@ -1,0 +1,24 @@
+serve-path: '.'
+bind: 0.0.0.0
+port: 5000
+path-prefix: /
+hidden:
+  - '.*'
+  - '*.log'
+  - '*.lock'
+allow-all: false
+allow-upload: true
+allow-delete: false
+allow-search: true
+allow-symlink: false
+allow-archive: false
+allow-hash: false
+enable-cors: true
+render-index: true
+render-try-index: true
+render-spa: true
+# these require env var expansion to function properly, moved to alias
+# assets: "/home/jeremy/.config/dufs/assets/"
+# log-file: "/home/jeremy/.config/dufs.log"
+compress: low
+

@@ -10,13 +10,17 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 
 # # # # # # # # # # # # # #
-# generic aliases
+# aliases
 # # # # # # # # # # # # # #
 
 alias ls="/bin/ls --color=auto -F"
 alias ll="/bin/ls --color=auto -lF"
 alias l="/bin/ls --color=auto -lrtF"
-alias pyv="_pyv"
+alias pyv="_move_into_a_pyv"
+_dufs=`which dufs`
+_dufsc="${HOME}/.config/dufs"
+alias dufs="${_dufs} -c $dufsc/config.yaml
+
 
 # # # # # # # # # # # # # #
 # helper functions
@@ -37,7 +41,7 @@ function mcd {
   cd $dest
 }
 
-function _pyv {
+function _move_into_a_pyv {
   dest=$1
   if [ -z $dest ]; then
     dest="${HOME}/.pyvs/scratch"
