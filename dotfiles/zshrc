@@ -22,6 +22,7 @@ _dufsc="${HOME}/.config/dufs"
 alias dufs="${_dufs} -c $dufsc/config.yaml
 
 
+
 # # # # # # # # # # # # # #
 # helper functions
 # # # # # # # # # # # # # #
@@ -88,6 +89,7 @@ alias claude-work='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-work" $claude_bin '
 alias claude-home='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-home" $claude_bin '
 alias claude="echo bzzt.  use claude-work or claude-home"
 
+export PATH=$PATH:$HOME/.localbin
 
 # # # # # # # # # # # # # #
 # finally, see if there's a ~/.zlocal and pull that in for per workstation
@@ -95,5 +97,4 @@ alias claude="echo bzzt.  use claude-work or claude-home"
 # # # # # # # # # # # # # #
 
 sourceif ~/.zlocal
-
 
