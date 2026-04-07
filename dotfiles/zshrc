@@ -89,7 +89,13 @@ alias claude-work='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-work" $claude_bin '
 alias claude-home='CLAUDE_CONFIG_DIR="${HOME}/.config/claude-home" $claude_bin '
 alias claude="echo bzzt.  use claude-work or claude-home"
 
+
+# # # # # # # # # # # # # #
+# few useful env tweaks for the interactive shell
+# # # # # # # # # # # # # #
+
 export PATH=$PATH:$HOME/.localbin
+export EDITOR=`which vim`
 
 # # # # # # # # # # # # # #
 # finally, see if there's a ~/.zlocal and pull that in for per workstation
