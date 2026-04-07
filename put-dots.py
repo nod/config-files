@@ -68,3 +68,4 @@ if exists(normpath(join(home, ".secrets"))):
 else:
     print("no .secrets, not linking .ssh")
 
+
