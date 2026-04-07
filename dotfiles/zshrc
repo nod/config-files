@@ -19,7 +19,7 @@ alias l="/bin/ls --color=auto -lrtF"
 alias pyv="_move_into_a_pyv"
 _dufs=`which dufs`
 _dufsc="${HOME}/.config/dufs"
-alias dufs="${_dufs} -c $dufsc/config.yaml
+alias dufs="${_dufs} -c $dufsc/config.yaml"
 
 
 
