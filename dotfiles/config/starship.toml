@@ -11,7 +11,6 @@ $shlvl\
 $shell\
 $env_var\
 $jobs\
-$sudo\
 $character"""
 
 right_format = """
@@ -136,8 +135,8 @@ ignore_submodules = true
 disabled = false
 
 [git_status]
-style = "bold italic bright-blue"
-format = "([⎪$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed⎥]($style))"
+style = "bold bright-blue"
+format = "([$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed]($style))"
 conflicted = "[◪◦](italic bright-magenta)"
 ahead = "[▴│[${count}](bold white)│](italic green)"
 behind = "[▿│[${count}](bold white)│](italic red)"
