@@ -1,4 +1,5 @@
 brew "dsq"
+brew "dufs"
 brew "duckdb"
 brew "figlet"
 brew "gh"
