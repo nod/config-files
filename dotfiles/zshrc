@@ -72,6 +72,8 @@ export TERM
 # pasting into the terminal upper cases last char, this fixes that
 unset zle_bracketed_paste
 
+# brew on linux can cause issues depending on who owns it
+export ZSH_DISABLE_COMPFIX="true"
 
 # # # # # # # # # # # # # #
 # maybe private stuff?
