@@ -96,7 +96,7 @@ alias claude="echo bzzt.  use claude-work or claude-home"
 # few useful env tweaks for the interactive shell
 # # # # # # # # # # # # # #
 
-export PATH=$PATH:$HOME/.localbin
+export PATH=$HOME/.localbin:$HOME/.cargo/bin:$PATH
 export EDITOR=`which vim`
 
 # # # # # # # # # # # # # #
