@@ -22,7 +22,6 @@ _dufsc="${HOME}/.config/dufs"
 alias dufs="${_dufs} -c $dufsc/config.yaml"
 
 
-
 # # # # # # # # # # # # # #
 # helper functions
 # # # # # # # # # # # # # #
@@ -102,5 +101,5 @@ export EDITOR=`which vim`
 # specific helpers
 # # # # # # # # # # # # # #
 
-sourceif ~/.zlocal
+sourceif ~/.secrets/zlocal
 
