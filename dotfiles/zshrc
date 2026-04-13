@@ -71,6 +71,8 @@ export TERM
 # pasting into the terminal upper cases last char, this fixes that
 unset zle_bracketed_paste
 
+# brew on linux can cause issues depending on who owns it
+export ZSH_DISABLE_COMPFIX="true"
 
 # # # # # # # # # # # # # #
 # maybe private stuff?
@@ -93,7 +95,7 @@ alias claude="echo bzzt.  use claude-work or claude-home"
 # few useful env tweaks for the interactive shell
 # # # # # # # # # # # # # #
 
-export PATH=$PATH:$HOME/.localbin
+export PATH=$HOME/.localbin:$HOME/.cargo/bin:$PATH
 export EDITOR=`which vim`
 
 # # # # # # # # # # # # # #
