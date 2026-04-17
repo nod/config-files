@@ -22,7 +22,6 @@ _dufsc="${HOME}/.config/dufs"
 alias dufs="${_dufs} -c $dufsc/config.yaml"
 
 
-
 # # # # # # # # # # # # # #
 # helper functions
 # # # # # # # # # # # # # #
@@ -58,9 +57,9 @@ function _move_into_a_pyv {
 # term settings
 # # # # # # # # # # # # # #
 
-# our term can get janky depending on whether we're local on mac or ssh'd to
-# linux some linux variants don't handle xterm-ghostty so just default to
-# xterm-256color when ssh'd
+# our term can get janky depending on whether we're local on mac or ssh'd
+# to linux some linux variants don't handle xterm-ghostty so just default
+# to xterm-256color when ssh'd
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   TERM=xterm-256color
@@ -72,6 +71,8 @@ export TERM
 # pasting into the terminal upper cases last char, this fixes that
 unset zle_bracketed_paste
 
+# brew on linux can cause issues depending on who owns it
+export ZSH_DISABLE_COMPFIX="true"
 
 # # # # # # # # # # # # # #
 # maybe private stuff?
@@ -94,7 +95,7 @@ alias claude="echo bzzt.  use claude-work or claude-home"
 # few useful env tweaks for the interactive shell
 # # # # # # # # # # # # # #
 
-export PATH=$PATH:$HOME/.localbin:$HOME/go/bin
+export PATH=$HOME/.localbin:$HOME/.go/bin:$HOME/.cargo/bin:$PATH
 export EDITOR=`which vim`
 
 # # # # # # # # # # # # # #
@@ -102,5 +103,5 @@ export EDITOR=`which vim`
 # specific helpers
 # # # # # # # # # # # # # #
 
-sourceif ~/.zlocal
+sourceif ~/.secrets/zlocal
 

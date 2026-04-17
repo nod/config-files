@@ -34,3 +34,6 @@ export TZ=CST6CDT
 # # # # # #
 
 [ -e $_homebrew ] && eval "$($_homebrew shellenv zsh)"
+
+# homebrew on linux can cause issues so let's be dirty here
+skip_global_compinit=1
