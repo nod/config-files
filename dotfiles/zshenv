@@ -25,6 +25,10 @@ if [[ "$machineType" == "Linux" ]]; then
 	_homebrew=/home/linuxbrew/.linuxbrew/bin/brew
 fi
 
+# always be central time for me
+export TZ=CST6CDT
+
+
 # # # # # #
 # now pull in homebrew
 # # # # # #
