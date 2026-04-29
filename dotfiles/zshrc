@@ -48,7 +48,7 @@ function _move_into_a_pyv {
     dest="${HOME}/.pyvs/scratch"
   fi
   if [ ! -e $dest ]; then
-    python3 -mvenv $dest
+    python3.14 -mvenv $dest
   fi
   source $dest/bin/activate
 }
