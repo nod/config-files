@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+
+from random import choice, randint
+from string import punctuation, ascii_letters as letters
+
+from os import environ
+dwfile = environ['HOME'] + "/.config/dw/wordlist"
+
+punc = punctuation.replace('\\','')
+punc = punc.replace('/','')
+punc = punc.replace('"','')
+punc = punc.replace("'",'')
+
+def choose_words(howmany=None):
+    if not howmany: howmany = randint(3,4)
+    assert isinstance(howmany, int)
+    dwlist = [ x.split()[1] for x in open(dwfile).readlines()]
+    return [choice(dwlist) for x in range(1,howmany)]
+
+
+def add_upper(word):
+    not_done = True
+    ss = list(word)
+    while not_done:
+        x = randint(0,len(ss)-1)
+        if ss[x] in letters:
+            ss[x] = ss[x].upper()
+            not_done = False
+    return ''.join(ss)
+
+
+def genphrase():
+    words = choose_words()
+    seps = '-~.'
+    anchor = add_upper(choice(seps).join(words))
+    print (
+        anchor + choice(seps) + str(randint(44, 9999))
+        )
+
+if __name__ == '__main__':
+    genphrase()
