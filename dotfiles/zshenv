@@ -25,8 +25,15 @@ if [[ "$machineType" == "Linux" ]]; then
 	_homebrew=/home/linuxbrew/.linuxbrew/bin/brew
 fi
 
+# always be central time for me
+export TZ=CST6CDT
+
+
 # # # # # #
 # now pull in homebrew
 # # # # # #
 
 [ -e $_homebrew ] && eval "$($_homebrew shellenv zsh)"
+
+# homebrew on linux can cause issues so let's be dirty here
+skip_global_compinit=1
