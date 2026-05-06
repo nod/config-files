@@ -97,8 +97,8 @@ alias claude="echo bzzt.  use claude-work or claude-home"
 # # # # # # # # # # # # # #
 # few useful env tweaks for the interactive shell
 # # # # # # # # # # # # # #
-
-export PATH=$HOME/.localbin:$HOME/.go/bin:$HOME/.cargo/bin:$PATH
+BREWPATH=$(brew --prefix)/bin
+export PATH=$HOME/.localbin:$HOME/.go/bin:$HOME/.cargo/bin:$BREWPATH:$PATH
 export EDITOR=`which vim`
 
 # # # # # # # # # # # # # #
