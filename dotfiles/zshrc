@@ -17,6 +17,9 @@ alias ls="/bin/ls --color=auto -F"
 alias ll="/bin/ls --color=auto -lF"
 alias l="/bin/ls --color=auto -lrtF"
 
+
+alias webdir="_serve_dir_as_http"
+
 alias pyv="_move_into_a_pyv"
 _dufs=`which dufs`
 _dufsc="${HOME}/.config/dufs"
@@ -53,6 +56,15 @@ function _move_into_a_pyv {
     python3 -mvenv $dest
   fi
   source $dest/bin/activate
+}
+
+function _serve_dir_as_http {
+  port=$(( RANDOM % 4000 + 6000 ))
+  me=$( hostname )
+  echo
+  echo "http://${me}:${port}/"
+  echo
+  python3 -mhttp.server --bind "${me}" ${port}
 }
 
 
@@ -98,7 +110,8 @@ alias claude="echo bzzt.  use claude-work or claude-home"
 # few useful env tweaks for the interactive shell
 # # # # # # # # # # # # # #
 
-export PATH=$HOME/.localbin:$HOME/.go/bin:$HOME/.cargo/bin:$PATH
+hb_path=$(brew --prefix)/bin
+export PATH=$HOME/.localbin:$HOME/.go/bin:$HOME/.cargo/bin:$hb_path:$PATH
 export EDITOR=`which vim`
 
 # # # # # # # # # # # # # #
