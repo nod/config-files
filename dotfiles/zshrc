@@ -108,3 +108,4 @@ export EDITOR=`which vim`
 
 sourceif ~/.secrets/zlocal
 
+. "/Users/jeremy/.acme.sh/acme.sh.env"
