@@ -8,6 +8,9 @@ export KEYTIMEOUT=1 # there's a delay for entering vim mode in zsh
 # zsh vi-mode is horrible.  use the excellent zsh-vi-mode instead of the builtin.
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
 
 # # # # # # # # # # # # # #
 # aliases
